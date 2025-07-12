@@ -2,10 +2,14 @@
 
 {{formation}}
 <br/>
-Nom : {{nom|uppercase}}
+<span class="c2">Nom : {{nom|uppercase}}</span>
 <br/>
 Email : {{email}}
 <br/>
 <ul>
-    <li *ngFor="let nom of noms">{{nom|firstLetterUppercase|addIng}}</li>
+    <li class="c1" *ngFor="let nom of noms">{{nom|firstLetterUppercase|addIng}}</li>
 </ul>
+
+<div class="custom-box">
+  Ce texte est stylisé avec une classe CSS maison 💚
+</div>
