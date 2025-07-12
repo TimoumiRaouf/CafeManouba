@@ -12,5 +12,5 @@ export class App {
   nom:string  ="Mohamed Amine mezghich";
   email:string ="amine.mezghich@gmail.com";
 
-  noms:string[]=["amine","taha","abdesatar","rania","ines"]
+  noms:string[]=["aMINE","taHa","abdeSAtar","raniA","iNes"]
 }

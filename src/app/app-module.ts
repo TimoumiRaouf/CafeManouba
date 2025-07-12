@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Home } from './home/home';
 import { AddIngPipe } from './pipes/add-ing-pipe';
+import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase-pipe';
 
 @NgModule({
   declarations: [
     App,
     Home,
-    AddIngPipe
+    AddIngPipe,
+    FirstLetterUppercasePipe
   ],
   imports: [
     BrowserModule,
