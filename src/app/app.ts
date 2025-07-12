@@ -7,5 +7,8 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ams');
+  formation:string="FullStack Spring Angular & Devops";
+
+  nom:string  ="Mohamed Amine mezghich";
+  email:string ="amine.mezghich@gmail.com";
 }
