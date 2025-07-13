@@ -7,10 +7,10 @@ import { Injectable } from '@angular/core';
 })
 export class Users {
 
-  constructor(private http:HttpClient){} // injection de dépendence Objet de type HttpClient
+  constructor(private http: HttpClient) { } // injection de dépendence Objet de type HttpClient
 
-  getUsers(){
+  getUsers() {
     return this.http.get("https://jsonplaceholder.typicode.com/users");
   }
-  
+
 }
