@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   styleUrl: './home.css'
 })
 export class Home implements OnInit{
-
+/*
   providers:Provider[]=[
     {
       id:1, name:"Samsung",email:"samsung@gmail.com",address:"Koré"},
@@ -19,7 +19,7 @@ export class Home implements OnInit{
 
     { id:3, name:"Toshiba",email:"toshiba@gmail.com",address:"Japon"}
   ];
-
+*/
   listUsers= new BehaviorSubject<any | null>(null);;
 
   constructor(private userService:Users){ // injection de la dépendance:le service Users

@@ -8,6 +8,7 @@ import { AddIngPipe } from './pipes/add-ing-pipe';
 import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase-pipe';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ListProviders } from './list-providers/list-providers';
+import { Navbar } from './navbar/navbar';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListProviders } from './list-providers/list-providers';
     Home,
     AddIngPipe,
     FirstLetterUppercasePipe,
-    ListProviders
+    ListProviders,
+    Navbar
   ],
   imports: [
     BrowserModule,
