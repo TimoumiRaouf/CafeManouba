@@ -19,13 +19,16 @@ export class AddProvider implements OnInit {
 
   saveProvider(provider: any) {
     this.providerService.saveProvider(provider).subscribe(
-      data => 
-        {
-          //console.log(data)
-          this.router.navigate(['/providers']);
-        },
-      error => console.log(error)
-    );
+      {
+      next: (data: any) => {
+        this.router.navigate(['providers']);
+
+      },
+      error: (err) => {
+        console.error('Erreur ajout provider', err);
+
+      }
+    });
   }
 
 }

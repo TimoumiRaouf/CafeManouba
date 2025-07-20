@@ -31,6 +31,10 @@ export class ListProviders implements OnInit {
     });
   }
 
+  updateProvider(id:any){
+    this.router.navigate(['updateProvider', id]);
+  }
+
   loadProviders(){
     this.providerService.getProviders().subscribe({
       next: (data: any) => {
