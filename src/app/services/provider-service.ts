@@ -9,4 +9,9 @@ export class ProviderService {
   getProviders() {
     return this.http.get("http://127.0.0.1:8081/providers/");
   }
+
+
+  saveProvider(provider:any){
+    return this.http.post("http://127.0.0.1:8081/providers/",provider);
+  }
 }

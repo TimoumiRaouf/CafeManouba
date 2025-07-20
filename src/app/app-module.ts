@@ -6,9 +6,11 @@ import { App } from './app';
 import { Home } from './home/home';
 import { AddIngPipe } from './pipes/add-ing-pipe';
 import { FirstLetterUppercasePipe } from './pipes/first-letter-uppercase-pipe';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { ListProviders } from './list-providers/list-providers';
 import { Navbar } from './navbar/navbar';
+import { AddProvider } from './add-provider/add-provider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,16 +19,18 @@ import { Navbar } from './navbar/navbar';
     AddIngPipe,
     FirstLetterUppercasePipe,
     ListProviders,
-    Navbar
+    Navbar,
+    AddProvider
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withFetch(), withInterceptorsFromDi())
   ],
   bootstrap: [App]
 })
