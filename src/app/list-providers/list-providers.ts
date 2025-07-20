@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Provider } from '../../models';
 import { ProviderService } from '../services/provider-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-providers',
@@ -11,13 +12,28 @@ import { ProviderService } from '../services/provider-service';
 })
 export class ListProviders implements OnInit {
   listProviders = new BehaviorSubject<Provider[] | null>(null);
-  constructor(private providerService: ProviderService) { // injection de la dépendance:le service Users
+  constructor(private providerService: ProviderService, private router:Router) { // injection de la dépendance:le service Users
   }
   ngOnInit(): void {
-    //console.log("ngOnInit ...")
+    this.loadProviders();
+    
+  }
+
+  deleteProvider(id:any){
+    this.providerService.deleteProvider(id).subscribe({
+      next: (data: any) => {
+      this.loadProviders();
+      },
+      error: (err) => {
+        console.error('Problème de suppression du provider', err);
+
+      }
+    });
+  }
+
+  loadProviders(){
     this.providerService.getProviders().subscribe({
       next: (data: any) => {
-        console.log(data)
         this.listProviders.next(data);
 
       },
