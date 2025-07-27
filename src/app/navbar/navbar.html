@@ -7,15 +7,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/users">Users<span class="sr-only">(current)</span></a>
+        <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/users">Users<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/providers">Providers</a>
+        <a class="nav-link" routerLink="/providers" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Providers</a>
       </li>
 
         <li class="nav-item">
-        <a class="nav-link" routerLink="/addProvider">Add new provider</a>
+        <a class="nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Add new provider</a>
       </li>
+
+      <li class="nav-item">
+      <a class="nav-link" routerLink="/login"  *ngIf="!loginService.isUserLoggedIn()" routerLinkActive="active">Login</a>
+      </li>
+       <li class="nav-item">   
+      <a class="nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()"  routerLinkActive="active">LogOut</a>
+      </li>  
+
 
     </ul>
 

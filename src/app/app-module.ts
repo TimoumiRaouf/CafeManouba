@@ -12,6 +12,8 @@ import { Navbar } from './navbar/navbar';
 import { AddProvider } from './add-provider/add-provider';
 import { FormsModule } from '@angular/forms';
 import { UpdateProvider } from './update-provider/update-provider';
+import { Login } from './login/login';
+import { Logout } from './logout/logout';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UpdateProvider } from './update-provider/update-provider';
     ListProviders,
     Navbar,
     AddProvider,
-    UpdateProvider
+    UpdateProvider,
+    Login,
+    Logout
   ],
   imports: [
     BrowserModule,
