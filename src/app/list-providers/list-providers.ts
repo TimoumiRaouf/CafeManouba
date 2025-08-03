@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Provider } from '../../models';
 import { ProviderService } from '../services/provider-service';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.development';
 
 @Component({
   selector: 'app-list-providers',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './list-providers.css'
 })
 export class ListProviders implements OnInit {
+  public urlUpload = environment.urlUploadImage;
   listProviders = new BehaviorSubject<Provider[] | null>(null);
   constructor(private providerService: ProviderService, private router:Router) { // injection de la dépendance:le service Users
   }
