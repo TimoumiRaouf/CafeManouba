@@ -1,0 +1,9 @@
+1)docker-compose up -f nomfichier.ymal -d : lancer la stack dockercompose décrite dans le fichier docker compose
+
+2)docker-compose down
+
+--dgsgjdjgsjdsj
+
+3)Pour générer le jar(exécutable) du backend, la commande est : mvn clean install -D skipTests
+
+4)Pour générer le dist du frontend(exécutable), la commande est : ng build --aot

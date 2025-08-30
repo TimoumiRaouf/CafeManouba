@@ -1,0 +1,42 @@
+# Docker Compose
+version: '3.3'
+
+# Define services
+services:
+  # Database Service (Mysql)
+  database:
+    image: mysql:latest
+    container_name: mysql_cont
+    volumes:
+      - db_ams_vol:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: dbams2025
+      MYSQL_USER: sip
+      MYSQL_PASSWORD: sip-ac2025
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - spr_net
+
+  # phpmyadmin Service
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: pmadmin_cont
+    depends_on:
+      - database
+    restart: always
+    ports:
+      - 8086:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - spr_net
+
+# Dec
+volumes:
+  db_ams_vol:
+
+networks:
+  spr_net:
+
+

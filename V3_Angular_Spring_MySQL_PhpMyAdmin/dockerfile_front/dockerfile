@@ -1,0 +1,9 @@
+# Utilise la dernière version de nginx comme image de base pour l'étape d'exécution.
+FROM nginx:latest     
+
+# Copie l'application construite de l'étape de construction vers le répertoire de service nginx.
+COPY ./* /usr/share/nginx/html/
+
+
+# Expose le port 80 pour le service web.
+EXPOSE 80
